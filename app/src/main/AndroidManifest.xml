@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Module2"
         tools:targetApi="24">
         <activity
+            android:name=".CalendarActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
