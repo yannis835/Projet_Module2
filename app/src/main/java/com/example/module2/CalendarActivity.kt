@@ -12,7 +12,7 @@ import com.example.module2.databinding.ActivityCalendarBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
-enum class Category {CONNECTION,CALENDAR,INFORMATIONS}
+enum class Category {SignIn,CALENDAR,INFORMATIONS}
 
 
 class CalendarActivity : AppCompatActivity() {
@@ -31,7 +31,7 @@ class CalendarActivity : AppCompatActivity() {
         binding = ActivityCalendarBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val category =intent.getSerializableExtra(extraKey) as? Category
-        currentCategory=category ?: Category.CONNECTION
+        currentCategory=category ?: Category.SignIn
         supportActionBar?.title = categoryName()
         textview_date = this.binding.textViewDate1
         button_date = this.binding.buttonDate1
@@ -63,7 +63,7 @@ class CalendarActivity : AppCompatActivity() {
 
     private fun categoryName(): String{
         return when(currentCategory){
-            Category.CONNECTION-> "Connextion"
+            Category.SignIn-> "SignIn"
             Category.CALENDAR-> "Calendar"
             Category.INFORMATIONS->"Informations"
         }

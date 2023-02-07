@@ -28,11 +28,7 @@ class MainActivity : AppCompatActivity() {
         database = Firebase.database("https://module2androidstudio-default-rtdb.europe-west1.firebasedatabase.app/").reference
         writeNewUser()
 
-        val buttonSignIn1 = findViewById<Button>(R.id.buttonSignIn1)
-        buttonSignIn1.setOnClickListener{
-            val intent= Intent(this,Login::class.java)
-            startActivity(intent)
-        }
+
     }
 
     override fun onStart() {
@@ -66,6 +62,15 @@ class MainActivity : AppCompatActivity() {
     private fun buttonListener(){
         binding.buttonCalendar.setOnClickListener{
             showCategory(Category.CALENDAR)
+        }
+        binding.buttonSignIn1.setOnClickListener{
+            showCategory(Category.SignIn)
+
+        }
+
+        binding.buttonInfo.setOnClickListener{
+            showCategory(Category.INFORMATIONS)
+
         }
     }
 
