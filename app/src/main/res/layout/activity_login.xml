@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FF9800"
-    android:backgroundTint="#05482F">    <Button
+    android:backgroundTint="#05482F">
+
+    <Button
     android:id="@+id/buttonSignUp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -43,7 +45,9 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:text="Email adress" />    <TextView
+    tools:text="Email adress" />
+
+    <TextView
     android:id="@+id/textView"
     android:layout_width="103dp"
     android:layout_height="53dp"
@@ -76,7 +80,9 @@
     app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
     app:layout_constraintHorizontal_bias="0.494"
     app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-    />    <TextView
+    />
+
+    <TextView
     android:id="@+id/dont"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
