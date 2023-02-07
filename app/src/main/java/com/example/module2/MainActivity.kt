@@ -75,8 +75,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showCategory(category: Category){
-        val intent = Intent( this, CalendarActivity::class.java)
-        intent.putExtra(CalendarActivity.extraKey, category)
+        val intent = Intent( this, MenuActivity::class.java)
+        intent.putExtra(MenuActivity.extraKey, category)
         startActivity(intent)
     }
 
