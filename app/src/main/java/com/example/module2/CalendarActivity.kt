@@ -12,7 +12,16 @@ import com.example.module2.databinding.ActivityCalendarBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
+
+
+
 class CalendarActivity : AppCompatActivity() {
+
+
+    companion object{
+        const val extraKey ="extraKey"
+    }
+
     lateinit var binding:ActivityCalendarBinding
     lateinit var currentCategory : Category
     var button_date: Button? = null
@@ -22,6 +31,9 @@ class CalendarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCalendarBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val category =intent.getSerializableExtra(extraKey) as? Category
+        currentCategory=category ?: Category.SIGNIN
+        supportActionBar?.title = categoryName()
         textview_date = this.binding.textViewDate1
         button_date = this.binding.buttonDate1
 
@@ -50,7 +62,13 @@ class CalendarActivity : AppCompatActivity() {
         })
     }
 
-
+    private fun categoryName(): String{
+        return when(currentCategory){
+            Category.SIGNIN-> "SignIn"
+            Category.CALENDAR-> "Calendar"
+            Category.INFORMATIONS->"Informations"
+        }
+    }
     private fun updateDateInView() {
         val myFormat = "MM/dd/yyyy" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)
